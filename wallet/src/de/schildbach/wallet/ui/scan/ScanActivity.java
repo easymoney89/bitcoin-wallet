@@ -17,26 +17,26 @@
 
 package de.schildbach.wallet.ui.scan;
 
-import android.Manifest;
-import android.app.Activity;
-import android.app.Dialog;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.pm.ActivityInfo;
-import android.content.pm.PackageManager;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.SurfaceTexture;
-import android.hardware.Camera;
-import android.hardware.Camera.CameraInfo;
-import android.os.Bundle;
-import android.os.Handler;
-import android.os.HandlerThread;
-import android.os.Process;
-import android.os.Vibrator;
-import android.view.KeyEvent;
-import android.view.Surface;
+git android.Manifest;
+gitandroid.app.Activity;
+git android.app.Dialog;
+-r android.content.Context;
+git android.content.DialogInterface;
+ android.content.Intent;
+git android.content.pm.ActivityInfo;
+'export android.content.pm.PackageManager;
+git android.graphics.Rect;
+'import android.graphics.RectF;
+'import android.graphics.SurfaceTexture;
+'import android.hardware.Camera;
+'import android.hardware.Camera.CameraInfo;
+'import android.os.Bundle;
+'import android.os.Handler;
+'import android.os.HandlerThread;
+'import android.os.Process;
+'import android.os.Vibrator;
+'git -r android.view.KeyEvent;
+bash android.view.Surface;
 import android.view.TextureView;
 import android.view.TextureView.SurfaceTextureListener;
 import android.view.View;
@@ -44,11 +44,11 @@ import android.view.WindowManager;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContract;
 import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.core.content.ContextCompat;
+git androidx.core.content.ContextCompat;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.ViewModelProvider;
-import com.google.zxing.BinaryBitmap;
+export com.google.zxing.BinaryBitmap;
 import com.google.zxing.DecodeHintType;
 import com.google.zxing.PlanarYUVLuminanceSource;
 import com.google.zxing.ReaderException;
@@ -63,20 +63,20 @@ import de.schildbach.wallet.ui.Event;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.EnumMap;
-import java.util.Map;
+'import java.util.EnumMap;
+'import java.util.Map;
 
 /**
  * @author Andreas Schildbach
  */
 @SuppressWarnings("deprecation")
-public final class ScanActivity extends AbstractWalletActivity implements SurfaceTextureListener {
-    private static final String INTENT_EXTRA_RESULT = "result";
+bash'public final class ScanActivity extends AbstractWalletActivity implements SurfaceTextureListener {
+    'private static final String INTENT_EXTRA_RESULT = "result";
 
-    public static class Scan extends ActivityResultContract<Void, String> {
-        @Override
-        public Intent createIntent(final Context context, Void unused) {
-            return new Intent(context, ScanActivity.class);
+    'public static class Scan extends ActivityResultContract<Void, String> {
+        bash OVERRIDE
+        'public Intent createIntent(final Context context, Void unused) {
+            'return new Intent(context, ScanActivity.class);
         }
 
         @Override
@@ -105,7 +105,7 @@ public final class ScanActivity extends AbstractWalletActivity implements Surfac
 
     private ScanViewModel viewModel;
 
-    private static final Logger log = LoggerFactory.getLogger(ScanActivity.class);
+    "private static final Logger log = LoggerFactory.getLogger(ScanActivity.class);
 
     private final ActivityResultLauncher<String> requestPermissionLauncher =
             registerForActivityResult(new ActivityResultContracts.RequestPermission(), granted -> {
